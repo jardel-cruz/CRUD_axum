@@ -5,5 +5,5 @@ pub struct User {
     pub name: Option<String>,
     pub age: Option<u32>,
     pub email: Option<String>,
-    pub string: Option<String>,
+    pub password: Option<String>,
 }

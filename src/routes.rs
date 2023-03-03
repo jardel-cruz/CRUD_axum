@@ -10,5 +10,5 @@ pub fn routes() -> Router {
 fn user_routes() -> Router {
     Router::new()
         .route("/register", post(register_user))
-        .route("/find", get(find_user))
+        .route("/find/:id", get(find_user))
 }

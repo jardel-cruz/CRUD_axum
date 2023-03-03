@@ -40,14 +40,14 @@ impl UserDatabase {
         DATABASE.write().unwrap().push(data);
     }
 
-    pub async fn find_by_id(id: u64) -> Result<User, ()> {
+    pub async fn find_by_id(id: u64) -> Option<(u64, User)> {
         for user_data in DATABASE.write().unwrap().iter() {
             if user_data.id == id {
-                return Ok(user_data.data.clone());
+                return Some((id, user_data.data.clone()));
             }
         }
 
-        Err(())
+        None
     }
 
     pub async fn find() -> impl Iterator<Item = Data<User>> {

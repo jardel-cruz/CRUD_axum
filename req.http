@@ -1,0 +1,13 @@
+POST http://localhost:3000/user/register
+content-type: application/json
+
+{
+    "name": "jardel2",
+    "email": "jardel@gmail.com",
+    "password": "jardel",
+    "age": 19
+}
+
+###
+
+GET http://localhost:3000/user/find/0
